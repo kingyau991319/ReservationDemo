@@ -1,0 +1,12 @@
+import { useTranslation } from 'react-i18next';
+import MainPage from './container/MainPage';
+
+function App() {
+  return (
+    <div className="App">
+      <MainPage/>
+    </div>
+  )
+}
+
+export default App
