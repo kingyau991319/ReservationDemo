@@ -14,24 +14,28 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 // Constants
 import { SMALL_PADDING, TINY_MARGIN, NEW_RESV_MIDWIDTH } from '../Constants/style';
 
+const FormStyle = {
+  width: '100%',
+  minWidth: NEW_RESV_MIDWIDTH,
+  p : SMALL_PADDING,
+  mt : TINY_MARGIN,
+  ml : TINY_MARGIN,
+  mr : TINY_MARGIN,
+  border: 3,
+  borderColor: 'grey.100',
+  borderRadius: 2
+}
+
+const margin = {
+  m : 3
+}
+
 const Form = () => {
   const matches = useMediaQuery('(min-width:450px)');
 
   return (
-    <Box 
-      sx={{
-        width: '100%',
-        minWidth: NEW_RESV_MIDWIDTH,
-        p : SMALL_PADDING,
-        mt : TINY_MARGIN,
-        ml : TINY_MARGIN,
-        mr : TINY_MARGIN,
-        border: 3,
-        borderColor: 'grey.100',
-        borderRadius: 2
-      }}
-    >
-      <Typography variant="subtitle1" display="block" gutterBottom sx={{mb:3}}>
+    <Box sx={FormStyle} >
+      <Typography variant="h4" gutterBottom component="div" sx={margin}>
         Form
       </Typography>
 

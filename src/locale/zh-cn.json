@@ -1,11 +1,17 @@
 {
   "afternoon" : "午后",
+  "age" : "年龄",
   "booking_date" : "预定日期",
+  "date" : "日期",
+  "email" : "电子邮件",
   "full_day": "全天",
   "morning": "白天",
   "new" : "新增",
+  "name" : "名称",
   "night" : "夜晚",
-  "search" : "搜索",
+  "phone_number" : "电话号码",
   "period" : "时段",
-  "person_information" : "个人信息"
+  "person_information" : "个人信息",
+  "remark" : "備註",
+  "search" : "搜索"
 }

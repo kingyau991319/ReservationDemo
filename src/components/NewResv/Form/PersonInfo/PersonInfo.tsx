@@ -6,8 +6,9 @@ import { useTranslation } from 'react-i18next';
 
 // Material ui
 import Box from '@mui/material/Box';
-import { Grid } from "@mui/material"
 import { Typography } from '@mui/material';
+import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
 
 // Icon
 import CloseIcon from '@mui/icons-material/Close';
@@ -24,36 +25,42 @@ interface Person {
   remark: string
 }
 
+const typographyProps = {
+  mt : 3,
+  mb : 3
+};
+
 const PersonInfo = () => {
 
   const { t } = useTranslation();
   let [ persons, setPersons ] = useState<Person[]>([
     {
       id: 1,
-      name: '',
+      name: 'hello is my name',
       age: 0,
-      email: '',
-      phone: '',
-      remark: ''
+      email: 'kingyau@yahoo.com.hk',
+      phone: '5555',
+      remark: 'no remark'
     }
   ]);
 
   return (
     <>
-      <Typography variant="subtitle1" display="block" gutterBottom sx={{mt : 3, mb : 3}}>
+      <Typography variant="subtitle1" display="block" gutterBottom sx={typographyProps}>
         {t('person_information')}
       </Typography>
-      <Grid container>
-        <div>PersonInfo</div>
-        {/* TODO: border =W= */}
+      <Box sx={{border: 1 , p: 3, m: 2}}>
         {
           persons.map((person: Person, index: number) => {
             return (
-              <Person/>
+              <Person key={person.id} person={person}/>
             )
-        })
-      }
-    </Grid>
+          })
+        }
+      </Box>
+      <Stack direction={{sm: 'row-reverse'}} sx={{mr: 3}} spacing={3}>
+        <Button variant="outlined">{t('add_new')}</Button>
+      </Stack>
   </>
   )
 }

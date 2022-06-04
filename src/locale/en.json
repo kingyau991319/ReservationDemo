@@ -1,11 +1,17 @@
 {
   "afternoon" : "Afternoon",
+  "age" : "Age",
   "booking_date" : "Booking Date",
+  "date" : "Date",
+  "email" : "Email",
   "full_day": "Full Day",
   "morning": "Morning",
+  "name": "Name",
   "new" : "New",
   "night" : "Night",
-  "search" : "Search",
+  "phone_number" : "Phone Number",
   "period" : "Period",
-  "person_information" : "Person information"
+  "person_information" : "Person information",
+  "remark" : "Remark",
+  "search" : "Search"
 }
