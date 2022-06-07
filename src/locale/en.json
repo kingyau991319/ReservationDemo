@@ -1,8 +1,10 @@
 {
+  "add_new" : "Add New",
   "afternoon" : "Afternoon",
   "age" : "Age",
   "booking_date" : "Booking Date",
   "date" : "Date",
+  "delete" : "Delete",
   "email" : "Email",
   "full_day": "Full Day",
   "morning": "Morning",

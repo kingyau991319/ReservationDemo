@@ -13,7 +13,7 @@ const Phone = (props) => {
 
   return (
     <>
-      <TextField id="name-basic" label={t("phone_number")} variant="filled" inputRef={inputRef} defaultValue={props.value ?? 'default'} />
+      <TextField id="name-basic" label={t("phone_number")} variant="filled" inputRef={inputRef} defaultValue={''} />
     </>
   )
 }

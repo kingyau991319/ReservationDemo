@@ -7,13 +7,13 @@ import TextField from '@mui/material/TextField';
 import { useTranslation } from 'react-i18next';
 
 
-const Age = (props) => {
+const Age = (props: { value : number; inputRef : any; }) => {
   const { inputRef } = props;
   const { t } = useTranslation();
 
   return (
     <>
-      <TextField id="name-basic" label={t("age")} variant="filled" inputRef={inputRef} defaultValue={props.value ?? 'default'} />
+      <TextField id="name-basic" label={t("age")} variant="filled" inputRef={inputRef} defaultValue={''} />
     </>
   )
 }

@@ -4,6 +4,9 @@ export const MARGIN = 5;
 // Small padding
 export const SMALL_PADDING = 1;
 
+// Medium padding
+export const MEDIUM_PADDING = 3;
+
 // Small padding
 export const TINY_MARGIN = 1;
 

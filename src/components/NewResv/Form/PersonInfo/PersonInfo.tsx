@@ -5,63 +5,78 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 // Material ui
-import Box from '@mui/material/Box';
-import { Typography } from '@mui/material';
+import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 
 // Icon
 import CloseIcon from '@mui/icons-material/Close';
 
+// Constants
+import { SMALL_MARGIN } from '../../Constants/style';
+
 // Components
 import Person from './Person';
 
-interface Person {
-  id: number,
-  name: string,
-  age: number,
-  email: string,
-  phone: string,
-  remark: string
-}
+// interface
+import { PersonData } from './Interface/PersonData';
 
 const typographyProps = {
-  mt : 3,
-  mb : 3
+  mt : SMALL_MARGIN,
+  mb : SMALL_MARGIN
 };
 
-const PersonInfo = () => {
+const initPersonData : PersonData = {
+  id: 1,
+  name: '',
+  age: 0,
+  email: '',
+  phone: '',
+  remark: ''
+}
 
+const PersonInfo = () => {
   const { t } = useTranslation();
-  let [ persons, setPersons ] = useState<Person[]>([
-    {
-      id: 1,
-      name: 'hello is my name',
-      age: 0,
-      email: 'kingyau@yahoo.com.hk',
-      phone: '5555',
-      remark: 'no remark'
-    }
-  ]);
+  let [ persons, setPersons ] = useState<PersonData[]>([initPersonData]);
+  let [ personOrder, setpersonOrder ] = useState(1);
+
+  // Add person by clicking the add new button
+  const addPerson = () => {
+    setPersons([...persons, {
+      ...initPersonData,
+      id: personOrder + 1,
+    }]);
+    setpersonOrder(personOrder + 1);
+  }
+
+  const deletePerson = (idx : number) => {
+    setPersons(
+      persons.filter((person, i) => i !== (idx))
+    );
+  }
 
   return (
     <>
       <Typography variant="subtitle1" display="block" gutterBottom sx={typographyProps}>
         {t('person_information')}
       </Typography>
-      <Box sx={{border: 1 , p: 3, m: 2}}>
-        {
-          persons.map((person: Person, index: number) => {
-            return (
-              <Person key={person.id} person={person}/>
-            )
-          })
-        }
-      </Box>
+      {
+        persons.map((person: PersonData, index: number) => {
+          return (
+            <Person 
+              key={person.id}
+              person={person}
+              idx={index}
+              deletePerson={deletePerson}
+              length={persons.length}
+            />
+          )
+        })
+      }
       <Stack direction={{sm: 'row-reverse'}} sx={{mr: 3}} spacing={3}>
-        <Button variant="outlined">{t('add_new')}</Button>
+        <Button variant="outlined" onClick={addPerson}>{t('add_new')}</Button>
       </Stack>
-  </>
+    </>
   )
 }
 

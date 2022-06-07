@@ -13,7 +13,7 @@ const Email = (props) => {
 
   return (
     <>
-      <TextField id="name-basic" label={t("email")} variant="filled" inputRef={inputRef} defaultValue={props.value ?? 'default'} />
+      <TextField id="name-basic" label={t("email")} variant="filled" inputRef={inputRef} defaultValue={''} />
     </>
   )
 }

@@ -1,8 +1,10 @@
 {
+  "add_new" : "新增",
   "afternoon" : "午後",
   "age" : "年齢",
   "booking_date" : "預定日期",
   "date" : "日期",
+  "delete" : "刪除",
   "email" : "電子郵件",
   "full_day": "全天",
   "morning": "白天",

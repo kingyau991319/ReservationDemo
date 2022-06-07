@@ -13,7 +13,7 @@ const Remark = (props) => {
 
   return (
     <>
-      <TextField id="name-basic" label={t("remark")} variant="filled" inputRef={inputRef} defaultValue={props.value ?? 'default'} />
+      <TextField id="name-basic" label={t("remark")} variant="filled" inputRef={inputRef} defaultValue={''} />
     </>
   )
 }
