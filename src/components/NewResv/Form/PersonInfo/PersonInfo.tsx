@@ -9,36 +9,28 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 
-// Icon
-import CloseIcon from '@mui/icons-material/Close';
-
 // Constants
 import { SMALL_MARGIN } from '../../Constants/style';
 
 // Components
 import Person from './Person';
 
-// interface
+// Interface
 import { PersonData } from './Interface/PersonData';
+
+// Constants
+import { initPersonData } from '../../Constants/initData';
 
 const typographyProps = {
   mt : SMALL_MARGIN,
   mb : SMALL_MARGIN
 };
 
-const initPersonData : PersonData = {
-  id: 1,
-  name: '',
-  age: 0,
-  email: '',
-  phone: '',
-  remark: ''
-}
 
-const PersonInfo = () => {
+const PersonInfo = (props : {persons : PersonData[], setPersons : Function}) => {
   const { t } = useTranslation();
-  let [ persons, setPersons ] = useState<PersonData[]>([initPersonData]);
-  let [ personOrder, setpersonOrder ] = useState(1);
+  const { persons, setPersons } = props;
+  const { personOrder, setpersonOrder } = useState(1);
 
   // Add person by clicking the add new button
   const addPerson = () => {
@@ -73,7 +65,7 @@ const PersonInfo = () => {
           )
         })
       }
-      <Stack direction={{sm: 'row-reverse'}} sx={{mr: 3}} spacing={3}>
+      <Stack direction={{sm: 'row-reverse'}} sx={{mr:  SMALL_MARGIN}} spacing={3}>
         <Button variant="outlined" onClick={addPerson}>{t('add_new')}</Button>
       </Stack>
     </>

@@ -16,10 +16,6 @@ import Typography from '@mui/material/Typography';
 // Constants
 import { MAXWIDTH_COLUMN, NEW_RESV_MIDWIDTH, SMALL_MARGIN } from '../../../Constants/style';
 
-const today = new Date()
-const tomorrow = new Date(today)
-tomorrow.setDate(tomorrow.getDate() + 1)
-
 function Item(props: BoxProps) {
   const { sx, ...other } = props;
   return (
@@ -34,12 +30,10 @@ function Item(props: BoxProps) {
   );
 }
 
-const DatePickers = (props: {matches: boolean}) => {
-  const [value, setValue] = useState<Date | null>(tomorrow);
+const DatePickers = (props: {matches: boolean, date : Date, setDate : Function}) => {
   const { t } = useTranslation();
-  const { matches } = props;
+  const { matches, date, setDate } = props;
 
-  // TODO: tranlsation for datepicker
   return (
     <Box 
     sx={{
@@ -65,12 +59,11 @@ const DatePickers = (props: {matches: boolean}) => {
         >
           <DatePicker
             disablePast
-            // TODO: default is tomorrow
             // TODO: past date validation
             label={matches ? '' : t("booking_date")}
-            value={value}
-            onChange={(newValue) => {
-              setValue(newValue);
+            value={date}
+            onChange={(newDate) => {
+              setDate(newDate);
             }}
             renderInput={(params) => <TextField {...params} />}
           />

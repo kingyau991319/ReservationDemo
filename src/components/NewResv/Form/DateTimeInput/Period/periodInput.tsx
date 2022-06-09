@@ -15,6 +15,8 @@ import { useTranslation } from 'react-i18next';
 
 import { MAXWIDTH_COLUMN, NEW_RESV_MIDWIDTH, SMALL_MARGIN } from '../../../Constants/style';
 
+const optionStyles = { minWidth: NEW_RESV_MIDWIDTH, maxWidth: MAXWIDTH_COLUMN }
+
 function Item(props: BoxProps) {
   const { sx, ...other } = props;
   return (
@@ -29,8 +31,8 @@ function Item(props: BoxProps) {
   );
 }
 
-const SelectPeriod = (props: {matches: boolean}) => {
-  const [period, setPeriod] = React.useState('full_day');
+const SelectPeriod = (props: {matches: boolean, period : any, setPeriod : Function}) => {
+  const { period, setPeriod } = props;
   const { t } = useTranslation();
   const { matches } = props;
 
@@ -56,10 +58,7 @@ const SelectPeriod = (props: {matches: boolean}) => {
       </Item>
       <Item>
         <Stack spacing={3}
-          sx={{
-            maxWidth: MAXWIDTH_COLUMN,
-            minWidth: NEW_RESV_MIDWIDTH,
-          }}
+          sx={optionStyles}
         >
           {/* TODO: make it better to show the code orz */}
           {
@@ -73,10 +72,10 @@ const SelectPeriod = (props: {matches: boolean}) => {
                     label={t("period")}
                     onChange={handleChange}
                   >
-                  <MenuItem value={'full_day'}  sx ={{minWidth: NEW_RESV_MIDWIDTH, maxWidth: MAXWIDTH_COLUMN}}>{t('full_day')}</MenuItem>
-                  <MenuItem value={'morning'}   sx ={{minWidth: NEW_RESV_MIDWIDTH, maxWidth: MAXWIDTH_COLUMN}}>{t('morning')}</MenuItem>
-                  <MenuItem value={'afternoon'} sx ={{minWidth: NEW_RESV_MIDWIDTH, maxWidth: MAXWIDTH_COLUMN}}>{t('afternoon')}</MenuItem>
-                  <MenuItem value={'night'}     sx ={{minWidth: NEW_RESV_MIDWIDTH, maxWidth: MAXWIDTH_COLUMN}}>{t('night')}</MenuItem>
+                  <MenuItem value={'full_day'}  sx ={optionStyles}> {t('full_day')} </MenuItem>
+                  <MenuItem value={'morning'}   sx ={optionStyles}> {t('morning')} </MenuItem>
+                  <MenuItem value={'afternoon'} sx ={optionStyles}> {t('afternoon')} </MenuItem>
+                  <MenuItem value={'night'}     sx ={optionStyles}> {t('night')} </MenuItem>
                 </Select>
               </FormControl>
             :
@@ -85,10 +84,10 @@ const SelectPeriod = (props: {matches: boolean}) => {
                 value={period}
                 onChange={handleChange}
               >
-                <MenuItem value={'full_day'}  sx ={{minWidth: NEW_RESV_MIDWIDTH, maxWidth: MAXWIDTH_COLUMN}}>{t('full_day')}</MenuItem>
-                <MenuItem value={'morning'}   sx ={{minWidth: NEW_RESV_MIDWIDTH, maxWidth: MAXWIDTH_COLUMN}}>{t('morning')}</MenuItem>
-                <MenuItem value={'afternoon'} sx ={{minWidth: NEW_RESV_MIDWIDTH, maxWidth: MAXWIDTH_COLUMN}}>{t('afternoon')}</MenuItem>
-                <MenuItem value={'night'}     sx ={{minWidth: NEW_RESV_MIDWIDTH, maxWidth: MAXWIDTH_COLUMN}}>{t('night')}</MenuItem>
+                <MenuItem value={'full_day'}  sx ={optionStyles}> {t('full_day')} </MenuItem>
+                <MenuItem value={'morning'}   sx ={optionStyles}> {t('morning')} </MenuItem>
+                <MenuItem value={'afternoon'} sx ={optionStyles}> {t('afternoon')} </MenuItem>
+                <MenuItem value={'night'}     sx ={optionStyles}> {t('night')} </MenuItem>
               </Select>
             </FormControl>
           }
