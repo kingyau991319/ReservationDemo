@@ -26,7 +26,18 @@ const Age = (props: {value:number|null, setAge: Function}) => {
     setAge(inputAge);
   }
 
-  return <TextField id="name-basic" label={t("age")} type="numb er" variant="filled" InputProps={{ inputProps: { min: 0, max: 120 } }} error={!isValidAge(value)} helperText={!isValidAge(value) ? "Age is too large or too small" : null} onChange={changeAge} defaultValue={''} />
+  return (
+    <TextField 
+      id="name-basic"
+      label={t("age")}
+      type="number"
+      variant="filled"
+      error={!isValidAge(value)}
+      helperText={!isValidAge(value) ? "Age is too large or too small" : null}
+      onChange={changeAge}
+      defaultValue={''}
+    />
+  )
 }
 
 export default Age;

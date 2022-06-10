@@ -7,6 +7,7 @@
   "delete" : "删除",
   "email" : "电子邮件",
   "full_day": "全天",
+  "invalid_email": "无效的电子邮件地址",
   "gender": "性別",
   "morning": "白天",
   "new" : "新增",

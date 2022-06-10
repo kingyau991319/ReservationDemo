@@ -7,15 +7,27 @@ import TextField from '@mui/material/TextField';
 // i18n
 import { useTranslation } from 'react-i18next';
 
+const isValidEmail = (email : string) : boolean => /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email) || email === '';
+
 const Email = (props : {value:string, setEmail:Function}) => {
   const { t } = useTranslation();
-  const { setEmail } = props;
-  const changeEmail = (event: ChangeEvent<{ value: string | null }>) => {
-    // TODO:
-    setEmail(event.target.value);
+  const { value, setEmail } = props;
+  const changeEmail = (event: ChangeEvent<{value: string | null}>) => {
+    const email = event.target.value ?? '';
+    setEmail(email);
   }
 
-  return <TextField id="name-basic" label={t("email")} variant="filled" onChange={changeEmail} defaultValue={''} />
-}
+  return (
+    <TextField 
+      id="name-basic"
+      label={t("email")}
+      value={value}
+      variant="filled"
+      error={!isValidEmail(value ?? '')}
+      helperText={!isValidEmail(value ?? '') ? t("invalid_email") : null}
+      onChange={changeEmail}
+      defaultValue={''}
+    />
+  )}
 
 export default Email;

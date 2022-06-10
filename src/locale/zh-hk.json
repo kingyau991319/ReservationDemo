@@ -7,6 +7,7 @@
   "delete" : "刪除",
   "email" : "電子郵件",
   "full_day": "全天",
+  "invalid_email": "無效的電子郵件",
   "gender": "性別",
   "morning": "白天",
   "new" : "新增",
