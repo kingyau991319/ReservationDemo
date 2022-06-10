@@ -38,15 +38,15 @@ const tomorrow = new Date(today)
 tomorrow.setDate(tomorrow.getDate() + 1)
 
 const Form = () => {
-  const matches = useMediaQuery('(min-width:450px)');
   const [period, setPeriod] = useState('full_day');
   const [date, setDate] = useState<Date>(tomorrow);
   const [persons, setPersons] = useState<PersonData[]>([initPersonData]);
 
-  console.log(persons);
+  //  MediaQuery
+  const matches = useMediaQuery('(min-width:450px)');
 
   return (
-    <Box sx={FormStyle} >
+    <Box sx={FormStyle}>
       <Typography variant="h4" gutterBottom component="div" sx={margin}>
         Form
       </Typography>
@@ -54,7 +54,7 @@ const Form = () => {
       <DatePickers matches={matches} date={date} setDate={setDate} />
       <SelectPeriod matches={matches} period={period} setPeriod={setPeriod} />
 
-      <PersonInfo persons={persons} setPersons={setPersons}/>
+      <PersonInfo persons={persons} setPersons={setPersons} />
 
       <SubmitButton />
 

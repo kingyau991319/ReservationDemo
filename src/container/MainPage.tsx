@@ -1,4 +1,4 @@
-// react
+// React
 import { Route, Routes } from "react-router-dom";
 
 // components

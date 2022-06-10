@@ -8,3 +8,5 @@ export const initPersonData : PersonData = {
   phone: '',
   remark: ''
 }
+
+export const RESV_PERSON_LIMIT = 12;

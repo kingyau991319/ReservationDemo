@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next';
 import MainPage from './container/MainPage';
 
 function App() {

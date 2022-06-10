@@ -1,6 +1,3 @@
-// React
-import { useState } from 'react';
-
 // i18n
 import { useTranslation } from 'react-i18next';
 
@@ -34,45 +31,46 @@ const DatePickers = (props: {matches: boolean, date : Date, setDate : Function})
   const { t } = useTranslation();
   const { matches, date, setDate } = props;
 
+  const setNewDate = (newDate : Date|null) => {
+    setDate(newDate);
+  }
+
   return (
     <Box 
-    sx={{
-      display: "flex",
-      flexDirection: 'row',
-      mt: SMALL_MARGIN
-    }}
-  >
-    <Item>
-      {matches 
-        && <Typography sx={{lineHeight: '56px', height: '30px', fontWeight: "1000", mr: SMALL_MARGIN}}>
-          {t('date')}:
-        </Typography>
-      }
-    </Item>
-    <Item>
-      <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <Stack spacing={3}
-          sx={{
-            maxWidth: MAXWIDTH_COLUMN,
-            minWidth: NEW_RESV_MIDWIDTH,
-          }}
-        >
-          <DatePicker
-            disablePast
-            // TODO: past date validation
-            label={matches ? '' : t("booking_date")}
-            value={date}
-            onChange={(newDate) => {
-              setDate(newDate);
-            }}
-            renderInput={(params) => <TextField {...params} />}
-          />
-        </Stack>
-        
-      </LocalizationProvider>
-    </Item>
-  </Box>
+      sx={{
+        display: "flex",
+        flexDirection: 'row',
+        mt: SMALL_MARGIN
+      }}
+    >
+      <Item>
+        {matches 
+          && <Typography sx={{lineHeight: '56px', height: '30px', fontWeight: "1000", mr: SMALL_MARGIN}}>
+            {t('date')}:
+          </Typography>
+        }
+      </Item>
 
+      <Item>
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
+          <Stack spacing={3}
+            sx={{
+              maxWidth: MAXWIDTH_COLUMN,
+              minWidth: NEW_RESV_MIDWIDTH,
+            }}
+          >
+            <DatePicker
+              disablePast
+              // TODO: past date validation
+              label={matches ? '' : t("booking_date")}
+              value={date}
+              onChange={(e) => setNewDate(e)}
+              renderInput={(params) => <TextField {...params} />}
+            />
+          </Stack>
+        </LocalizationProvider>
+      </Item>
+    </Box>
   );
 }
 
