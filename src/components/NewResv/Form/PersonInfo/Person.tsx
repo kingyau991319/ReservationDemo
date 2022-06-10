@@ -1,6 +1,3 @@
-// React
-import { useRef } from 'react';
-
 // i18n
 import { useTranslation } from 'react-i18next';
 
@@ -29,7 +26,8 @@ const Person =
     person : PersonData,
     idx: number,
     length: number,
-    deletePerson: Function
+    deletePerson: Function,
+    changeValue: Function
   }) => {
   const { t } = useTranslation();
 
@@ -47,6 +45,26 @@ const Person =
     remark
   } = props.person;
 
+  const setName = (name : string) => {
+
+  }
+
+  const setAge = (inputAge : number | null) => {
+
+  }
+
+  const setEmail = (email : string) => {
+
+  }
+
+  const setPhone = (phone : string) => {
+    
+  }
+
+  const setRemark = (remark : string) => {
+    
+  }
+
   return (
     <Box sx={{border: 1 , p: MEDIUM_PADDING, m: SMALL_MARGIN}}>
 
@@ -57,19 +75,19 @@ const Person =
       <Grid container spacing={{xs: 2}} columns={{ xs: 4, sm: 8}}>
 
         <Grid item xs={6} sm={4} md={4}>
-          <Name value={name} />
+          <Name value={name} setName={setName} />
         </Grid>
         <Grid item xs={6} sm={4} md={4}>
-          <Age value={age} />
+          <Age value={age} setAge={setAge} />
         </Grid>
         <Grid item xs={6} sm={4} md={4}>
-          <Email value={email} />
+          <Email value={email} setEmail={setEmail} />
         </Grid>
         <Grid item xs={6} sm={4} md={4}>
-          <Phone value={phone} />
+          <Phone value={phone} setPhone={setPhone} />
         </Grid>
         <Grid item xs={6} sm={4} md={4}>
-          <Remark value={remark} />
+          <Remark value={remark} setRemark={setRemark} />
         </Grid>
 
       </Grid>

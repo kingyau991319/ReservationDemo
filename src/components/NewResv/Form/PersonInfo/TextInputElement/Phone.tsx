@@ -8,7 +8,7 @@ import TextField from '@mui/material/TextField';
 import { useTranslation } from 'react-i18next';
 
 
-const Phone = (props : {value:string}) => {
+const Phone = (props : {value:string, setPhone:Function}) => {
   const { t } = useTranslation();
   const changePhone = (event: ChangeEvent<{ value: string | null }>) => {
     // TODO:

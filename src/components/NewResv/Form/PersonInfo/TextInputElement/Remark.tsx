@@ -7,7 +7,7 @@ import TextField from '@mui/material/TextField';
 // i18n
 import { useTranslation } from 'react-i18next';
 
-const Remark = (props: {value:string}) => {
+const Remark = (props: {value:string, setRemark:Function}) => {
   const { t } = useTranslation();
   const changeRemark = (event: ChangeEvent<{ value: string | null }>) => {
     // TODO:

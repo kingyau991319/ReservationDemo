@@ -44,6 +44,23 @@ const PersonInfo = (props : {persons : PersonData[], setPersons : Function}) => 
     );
   }
 
+  const changeValue = (id: number, type: string, value: never) => {
+    const updatePerson = persons.find((p) => p.id === id);
+    if (updatePerson !== undefined) {
+      switch (type) {
+        case 'age':
+        case 'email':
+        case 'name':
+        case 'phone':
+        case 'remark':
+          updatePerson[type] = value;
+        default:
+          break;
+      }
+      setPersons([...persons, updatePerson]);
+    }
+  }
+
   const personLength = persons.length;
 
   return (
@@ -60,6 +77,7 @@ const PersonInfo = (props : {persons : PersonData[], setPersons : Function}) => 
               idx={index}
               deletePerson={deletePerson}
               length={personLength}
+              changeValue={changeValue}
             />
           )
         })

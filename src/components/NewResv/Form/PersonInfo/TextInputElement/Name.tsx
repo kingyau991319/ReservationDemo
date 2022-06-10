@@ -7,7 +7,7 @@ import TextField from '@mui/material/TextField';
 // i18n
 import { useTranslation } from 'react-i18next';
 
-const Name = (props : {value:string}) => {
+const Name = (props : {value:string, setName:Function}) => {
   const { t } = useTranslation();
   const changeName = (event: ChangeEvent<{ value: string | null }>) => {
     console.log(event.target.value);
