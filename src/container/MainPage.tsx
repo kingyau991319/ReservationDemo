@@ -1,7 +1,7 @@
 // React
 import { Route, Routes } from "react-router-dom";
 
-// components
+// Components
 import TopBar from "../components/TopBar";
 import NewResv from "../components/NewResv/NewResv";
 import SearchResv from "../components/SearchResv";

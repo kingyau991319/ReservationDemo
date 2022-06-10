@@ -16,7 +16,7 @@ const Phone = (props : {value:string, setPhone:Function}) => {
     setPhone(event.target.value);
   }
 
-  return <TextField id="name-basic" label={t("phone_number")} variant="filled" onChange={changePhone} defaultValue={''} />
+  return <TextField id="name-basic" label={t("phone_number")} variant="filled" onChange={changePhone} defaultValue={''} inputProps={{ maxLength: 30 }} />
 }
 
 export default Phone;

@@ -14,7 +14,7 @@ const Remark = (props: {value:string, setRemark:Function}) => {
     // TODO:
     setRemark(event.target.value);
   }
-  return <TextField id="name-basic" label={t("remark")} variant="filled" onChange={changeRemark} defaultValue={''} />
+  return <TextField id="name-basic" label={t("remark")} variant="filled" onChange={changeRemark} defaultValue={''} inputProps={{ maxLength: 300 }} />
 }
 
 export default Remark;

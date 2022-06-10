@@ -61,7 +61,6 @@ const DatePickers = (props: {matches: boolean, date : Date, setDate : Function})
           >
             <DatePicker
               disablePast
-              // TODO: past date validation
               label={matches ? '' : t("booking_date")}
               value={date}
               onChange={(e) => setNewDate(e)}
