@@ -9,8 +9,9 @@ import { useTranslation } from 'react-i18next';
 
 const Name = (props : {value:string, setName:Function}) => {
   const { t } = useTranslation();
+  const { setName } = props;
   const changeName = (event: ChangeEvent<{ value: string | null }>) => {
-    console.log(event.target.value);
+    setName(event.target.value);
   }
 
   return <TextField id="name-basic" label={t("name")} variant="filled" onChange={changeName} defaultValue={''} />

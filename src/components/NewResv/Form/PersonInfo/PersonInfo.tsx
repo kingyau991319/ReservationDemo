@@ -24,6 +24,8 @@ const typographyProps = {
   mb : SMALL_MARGIN
 };
 
+type InputType = 'name' | 'age' | 'email' | 'phone' | 'remark';
+
 const PersonInfo = (props : {persons : PersonData[], setPersons : Function}) => {
   const { t } = useTranslation();
   const { persons, setPersons } = props;
@@ -44,20 +46,30 @@ const PersonInfo = (props : {persons : PersonData[], setPersons : Function}) => 
     );
   }
 
-  const changeValue = (id: number, type: string, value: never) => {
-    const updatePerson = persons.find((p) => p.id === id);
+  const changeValue = (id: number, type: InputType, value: any) => {
+    let updatePerson = persons.find((p) => p.id === id);
     if (updatePerson !== undefined) {
-      switch (type) {
-        case 'age':
-        case 'email':
-        case 'name':
-        case 'phone':
-        case 'remark':
-          updatePerson[type] = value;
-        default:
-          break;
-      }
-      setPersons([...persons, updatePerson]);
+        switch (type) {
+          case 'name':
+            updatePerson.name = value;
+            break;
+          case 'age':
+            updatePerson.age = value;
+            break;
+          case 'email':
+            updatePerson.email = value;
+            break;
+          case 'phone':
+            updatePerson.phone = value;
+            break;
+          case 'remark':
+            updatePerson.remark = value;
+            break;
+          default:
+            break;
+        }
+      persons[id-1] = updatePerson;
+      setPersons([...persons]);
     }
   }
 

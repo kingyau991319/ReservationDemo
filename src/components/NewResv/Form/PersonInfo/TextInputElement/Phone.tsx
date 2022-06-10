@@ -10,8 +10,10 @@ import { useTranslation } from 'react-i18next';
 
 const Phone = (props : {value:string, setPhone:Function}) => {
   const { t } = useTranslation();
+  const { setPhone } = props;
   const changePhone = (event: ChangeEvent<{ value: string | null }>) => {
     // TODO:
+    setPhone(event.target.value);
   }
 
   return <TextField id="name-basic" label={t("phone_number")} variant="filled" onChange={changePhone} defaultValue={''} />

@@ -17,6 +17,7 @@ import Age from './TextInputElement/Age';
 import Email from './TextInputElement/Email';
 import Phone from './TextInputElement/Phone';
 import Remark from './TextInputElement/Remark';
+import Gender from './TextInputElement/Gender';
 
 // Interface
 import { PersonData } from './Interface/PersonData';
@@ -35,34 +36,41 @@ const Person =
     length,
     idx,
     deletePerson,
+    changeValue,
   } = props;
 
   const { 
+    id,
     name,
     age,
+    gender,
     email,
     phone,
     remark
   } = props.person;
 
-  const setName = (name : string) => {
-
+  const setName = (inputName : string) => {
+    changeValue(id, 'name', inputName)
   }
 
   const setAge = (inputAge : number | null) => {
-
+    changeValue(id, 'age', inputAge)
   }
 
-  const setEmail = (email : string) => {
-
+  const setEmail = (inputEmail : string) => {
+    changeValue(id, 'email', inputEmail)
   }
 
-  const setPhone = (phone : string) => {
-    
+  const setPhone = (inputPhone : string) => {
+    changeValue(id, 'phone', inputPhone)
   }
 
-  const setRemark = (remark : string) => {
-    
+  const setGender = (inputGender : string) => {
+    changeValue(id, 'gender', inputGender)
+  }
+
+  const setRemark = (inputRemark : string) => {
+    changeValue(id, 'remark', inputRemark)
   }
 
   return (
@@ -76,6 +84,9 @@ const Person =
 
         <Grid item xs={6} sm={4} md={4}>
           <Name value={name} setName={setName} />
+        </Grid>
+        <Grid item xs={6} sm={4} md={4}>
+          <Gender value={gender} setGender={setGender} />
         </Grid>
         <Grid item xs={6} sm={4} md={4}>
           <Age value={age} setAge={setAge} />

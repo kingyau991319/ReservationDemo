@@ -9,8 +9,10 @@ import { useTranslation } from 'react-i18next';
 
 const Remark = (props: {value:string, setRemark:Function}) => {
   const { t } = useTranslation();
+  const { setRemark } = props;
   const changeRemark = (event: ChangeEvent<{ value: string | null }>) => {
     // TODO:
+    setRemark(event.target.value);
   }
   return <TextField id="name-basic" label={t("remark")} variant="filled" onChange={changeRemark} defaultValue={''} />
 }
