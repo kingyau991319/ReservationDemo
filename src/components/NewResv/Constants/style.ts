@@ -16,5 +16,8 @@ export const SMALL_MARGIN = 3;
 // MidWidth to support device
 export const NEW_RESV_MIDWIDTH = '275px';
 
+// MidWidth for the column input
+export const COLUMN_INPUT_MIDWIDTH = '200px';
+
 // MaxWidth to support device
 export const MAXWIDTH_COLUMN = '350px';

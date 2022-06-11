@@ -25,7 +25,7 @@ import Remark from './TextInputElement/Remark';
 import Gender from './TextInputElement/Gender';
 
 // Interface
-import { PersonData } from './Interface/PersonData';
+import { PersonData, PhoneData } from './Interface/PersonData';
 
 const Person = 
   (props : {
@@ -66,7 +66,7 @@ const Person =
     changeValue(id, 'email', inputEmail)
   }
 
-  const setPhone = (inputPhone : string) => {
+  const setPhone = (inputPhone : PhoneData) => {
     changeValue(id, 'phone', inputPhone)
   }
 
@@ -79,7 +79,7 @@ const Person =
   }
 
   return (
-    <Box sx={{border: 1 , p: MEDIUM_PADDING, m: SMALL_MARGIN}}>
+    <Box sx={{border: 1, p: MEDIUM_PADDING, mb: SMALL_MARGIN, mt: SMALL_MARGIN}}>
       <Typography variant="h5" display="block" gutterBottom sx={{mb: SMALL_MARGIN}}>
         <PersonIcon sx={{ fontSize: 25 }} />
         {'\t' + t('person_information') + (idx + 1)}

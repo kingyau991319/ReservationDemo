@@ -16,7 +16,7 @@ const MainPage = () => {
       <TopBar/>
       {/* <div id="mainPage"> */}
       <Grid
-        sx={{m : 'auto'}} 
+        sx={{m : 'auto', backgroundColor: '#fafafa'}} 
         alignItems="center"
         container
         justifyContent="center"

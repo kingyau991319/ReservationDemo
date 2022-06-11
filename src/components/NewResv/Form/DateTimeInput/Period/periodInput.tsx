@@ -72,10 +72,10 @@ const SelectPeriod = (props: {matches: boolean, period : any, setPeriod : Functi
                     label={t("period")}
                     onChange={handleChange}
                   >
-                  <MenuItem value={'full_day'}  sx ={optionStyles}> {t('full_day')} </MenuItem>
-                  <MenuItem value={'morning'}   sx ={optionStyles}> {t('morning')} </MenuItem>
-                  <MenuItem value={'afternoon'} sx ={optionStyles}> {t('afternoon')} </MenuItem>
-                  <MenuItem value={'night'}     sx ={optionStyles}> {t('night')} </MenuItem>
+                  <MenuItem value='full_day'  sx ={optionStyles}> {t('full_day')} </MenuItem>
+                  <MenuItem value='morning'   sx ={optionStyles}> {t('morning')} </MenuItem>
+                  <MenuItem value='afternoon' sx ={optionStyles}> {t('afternoon')} </MenuItem>
+                  <MenuItem value='night'     sx ={optionStyles}> {t('night')} </MenuItem>
                 </Select>
               </FormControl>
             :
@@ -84,10 +84,10 @@ const SelectPeriod = (props: {matches: boolean, period : any, setPeriod : Functi
                 value={period}
                 onChange={handleChange}
               >
-                <MenuItem value={'full_day'}  sx ={optionStyles}> {t('full_day')} </MenuItem>
-                <MenuItem value={'morning'}   sx ={optionStyles}> {t('morning')} </MenuItem>
-                <MenuItem value={'afternoon'} sx ={optionStyles}> {t('afternoon')} </MenuItem>
-                <MenuItem value={'night'}     sx ={optionStyles}> {t('night')} </MenuItem>
+                <MenuItem value='full_day'  sx ={optionStyles}> {t('full_day')} </MenuItem>
+                <MenuItem value='morning'   sx ={optionStyles}> {t('morning')} </MenuItem>
+                <MenuItem value='afternoon' sx ={optionStyles}> {t('afternoon')} </MenuItem>
+                <MenuItem value='night'     sx ={optionStyles}> {t('night')} </MenuItem>
               </Select>
             </FormControl>
           }

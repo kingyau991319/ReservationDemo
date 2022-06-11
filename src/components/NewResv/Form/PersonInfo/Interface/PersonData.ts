@@ -3,7 +3,14 @@ export interface PersonData {
   name: string,
   age: number | null,
   email: string,
-  phone: string,
-  gender: string,
+  phone: PhoneData,
+  gender: GenderType,
   remark: string
 }
+
+export interface PhoneData {
+  phoneCode: string,
+  phoneNumber: string
+}
+
+export type GenderType = 'male' | 'female' | 'other';

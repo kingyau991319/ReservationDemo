@@ -1,22 +1,43 @@
 // React
 import { ChangeEvent } from 'react';
 
-// TextField
-import TextField from '@mui/material/TextField';
+// Material ui
+import FormControl from '@mui/material/FormControl';
+import MenuItem from '@mui/material/MenuItem';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
+import InputLabel from '@mui/material/InputLabel';
 
 // i18n
 import { useTranslation } from 'react-i18next';
 
+// constant
+import { COLUMN_INPUT_MIDWIDTH } from '../../../Constants/style';
 
-const Gender = (props : {value:string, setGender:Function}) => {
+// interface
+import { GenderType } from '../Interface/PersonData';
+
+const Gender = (props : {value:GenderType, setGender:Function}) => {
   const { t } = useTranslation();
-  const { setGender } = props;
-  const changeGender = (event: ChangeEvent<{ value: string | null }>) => {
-    // TODO:
+  const { value, setGender } = props;
+
+  const changeGender = (event: SelectChangeEvent) => {
     setGender(event.target.value);
   }
 
-  return <TextField id="name-basic" label={t("gender")} variant="filled" onChange={changeGender} defaultValue={''} />
+  return (
+    <FormControl variant="filled" sx={{ minWidth: COLUMN_INPUT_MIDWIDTH }}>
+      <InputLabel id="form-input-gender"> {t("gender")} </InputLabel>
+      <Select
+        onChange={changeGender}
+        label={t("gender")}
+        defaultValue={value}
+      >
+        <MenuItem value='male'> {t('male')} </MenuItem>
+        <MenuItem value='female'> {t('female')} </MenuItem>
+        <MenuItem value='other'> {t('other')} </MenuItem>
+      </Select>
+    </FormControl>
+  )
 }
 
 export default Gender;

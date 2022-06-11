@@ -4,9 +4,12 @@ export const initPersonData : PersonData = {
   id: 1,
   name: '',
   age: null,
-  gender: '',
+  gender: 'other',
   email: '',
-  phone: '',
+  phone: {
+    phoneCode: '+852',
+    phoneNumber: ''
+  },
   remark: ''
 }
 

@@ -4,7 +4,7 @@ import { ChangeEvent } from 'react';
 // Material ui
 import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
-import Select from '@mui/material/Select';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
 // import SvgIcon from '@mui/material/SvgIcon';
 import FormControl from '@mui/material/FormControl';
 
@@ -18,13 +18,33 @@ import FormControl from '@mui/material/FormControl';
 // i18n
 import { useTranslation } from 'react-i18next';
 
-const Phone = (props : {value:string, setPhone:Function}) => {
+// interface
+import { PhoneData } from '../Interface/PersonData';
+
+// TODO: should be splited the component to be phoneCode and phoneNumber Input
+const Phone = (props : {value:PhoneData, setPhone:Function}) => {
   const { t } = useTranslation();
   const { value, setPhone } = props;
-  const changePhone = (event: ChangeEvent<{ value: string | null }>) => {
-    // TODO:
-    setPhone(event.target.value);
+
+  const changePhone = (type: string, data: string) => {
+    switch(type) {
+      case 'PhoneCode':
+        setPhone({...value, PhoneCode: data});
+        break;
+      case 'PhoneNumber':
+        setPhone({...value, PhoneNumber: data});
+        break;
+    }
   }
+
+  const changePhoneCode = (event: SelectChangeEvent) => {
+    changePhone('PhoneCode', event.target.value ?? '852');
+  }
+
+  const changePhoneNumber = (event: ChangeEvent<{ value: string | null }>) => {
+    changePhone('PhoneNumber', event.target.value ?? '');
+  }
+
   // <TextField id="name-basic" label={t("phone_number")} variant="filled" onChange={changePhone} defaultValue={''} inputProps={{ maxLength: 30 }} />
 
   // TODO: add svg
@@ -35,26 +55,29 @@ const Phone = (props : {value:string, setPhone:Function}) => {
         <Select
           labelId="form-input-period"
           id="form-input-period"
-          defaultValue={'hk'}
+          defaultValue={'852'}
           displayEmpty
           sx={{
             mr : 1,
           }}    
-          // onChange={}
+          onChange={changePhoneCode}
         >
-          <MenuItem value={'hk'}> 
+          {/* 'hk' */}
+          <MenuItem value='852' > 
             {/* <SvgIcon component={HKIcon} viewBox='0 0 24 24'/> */}
             {'+852'} 
           </MenuItem>
-          <MenuItem value={'tw'}>
+          {/* 'cn' */}
+          <MenuItem value='886'>
             {/* <SvgIcon component={CNIcon}/> */}
             {'+886'}
           </MenuItem>
-          <MenuItem value={'mo'}>
+          {/* 'tw' */}
+          <MenuItem value='853'>
             {/* <SvgIcon component={TWIcon}/> */}
             {'+853'}
           </MenuItem>
-          <MenuItem value={'cn'}>
+          <MenuItem value='86'>
             {/* <SvgIcon component={MOIcon}/> */}
             {'+86'}
           </MenuItem>
@@ -66,7 +89,7 @@ const Phone = (props : {value:string, setPhone:Function}) => {
         variant="filled"
         // error={!isValidAge(value)}
         // helperText={!isValidAge(value) ? "Age is too large or too small" : null}
-        // onChange={}
+        onChange={changePhoneNumber}
         defaultValue={''}
       />
     </>
