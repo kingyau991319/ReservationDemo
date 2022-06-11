@@ -28,8 +28,8 @@ const Age = (props: {value:number|null, setAge: Function}) => {
 
   return (
     <TextField 
-      id="name-basic"
       label={t("age")}
+      id="name-basic"
       type="number"
       variant="filled"
       error={!isValidAge(value)}
