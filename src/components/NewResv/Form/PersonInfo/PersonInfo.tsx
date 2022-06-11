@@ -64,11 +64,14 @@ const PersonInfo = (props : {persons : PersonData[], setPersons : Function}) => 
           case 'phone':
             updatePerson.phone = value;
             break;
+          case 'gender':
+            updatePerson.gender = value;
+            break;
           case 'remark':
             updatePerson.remark = value;
             break;
           default:
-            break;
+            return;
         }
       persons[id-1] = updatePerson;
       setPersons([...persons]);

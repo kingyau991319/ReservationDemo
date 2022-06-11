@@ -30,7 +30,7 @@ const Gender = (props : {value:GenderType, setGender:Function}) => {
       <Select
         onChange={changeGender}
         label={t("gender")}
-        defaultValue={value}
+        defaultValue={'other'}
       >
         <MenuItem value='male'> {t('male')} </MenuItem>
         <MenuItem value='female'> {t('female')} </MenuItem>

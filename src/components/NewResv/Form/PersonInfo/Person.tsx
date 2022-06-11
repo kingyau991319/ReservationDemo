@@ -25,7 +25,7 @@ import Remark from './TextInputElement/Remark';
 import Gender from './TextInputElement/Gender';
 
 // Interface
-import { PersonData, PhoneData } from './Interface/PersonData';
+import { GenderType, PersonData, PhoneData } from './Interface/PersonData';
 
 const Person = 
   (props : {
@@ -70,7 +70,7 @@ const Person =
     changeValue(id, 'phone', inputPhone)
   }
 
-  const setGender = (inputGender : string) => {
+  const setGender = (inputGender : GenderType) => {
     changeValue(id, 'gender', inputGender)
   }
 
