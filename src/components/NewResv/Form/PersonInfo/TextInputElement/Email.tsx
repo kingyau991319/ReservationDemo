@@ -21,7 +21,6 @@ const Email = (props : {value:string, setEmail:Function}) => {
     <TextField 
       id="name-basic"
       label={t("email")}
-      value={value}
       variant="filled"
       error={!isValidEmail(value ?? '')}
       helperText={!isValidEmail(value ?? '') ? t("invalid_email") : null}

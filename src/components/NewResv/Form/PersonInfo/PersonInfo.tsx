@@ -14,6 +14,7 @@ import Person from './Person';
 
 // Interface
 import { PersonData } from './Interface/PersonData';
+import { InputType } from './Interface/InputElementType';
 
 // Constants
 import { initPersonData, RESV_PERSON_LIMIT } from '../../Constants/initData';
@@ -23,8 +24,6 @@ const typographyProps = {
   mt : SMALL_MARGIN,
   mb : SMALL_MARGIN
 };
-
-type InputType = 'name' | 'age' | 'email' | 'phone' | 'remark';
 
 const PersonInfo = (props : {persons : PersonData[], setPersons : Function}) => {
   const { t } = useTranslation();

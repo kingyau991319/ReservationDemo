@@ -75,7 +75,6 @@ const Person =
 
   return (
     <Box sx={{border: 1 , p: MEDIUM_PADDING, m: SMALL_MARGIN}}>
-
       <Typography variant="subtitle1" display="block" gutterBottom sx={{mb: SMALL_MARGIN}}>
         {t('person_information') + (idx + 1)}
       </Typography>
@@ -103,12 +102,19 @@ const Person =
 
       </Grid>
 
-      {
-        length !== 1
-          && <Stack direction={{sm: 'row-reverse'}} sx={{mr: SMALL_MARGIN, mt: SMALL_MARGIN}} spacing={3}>
-            <Button variant="outlined" color="secondary" onClick={() => deletePerson(idx)}>{t('delete')}</Button>
-          </Stack>
-      }
+      <Stack
+        direction='row-reverse' 
+        sx={{mr: SMALL_MARGIN, mt: SMALL_MARGIN}} 
+      >
+        <Button 
+          variant="outlined"
+          color="secondary"
+          sx={{visibility: length !== 1 ? 'visible' : 'hidden'}}
+          onClick={() => deletePerson(idx)}
+        >
+          {t('delete')}
+        </Button>
+      </Stack>
     </Box>
   )
 }

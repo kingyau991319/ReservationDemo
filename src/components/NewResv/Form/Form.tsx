@@ -13,25 +13,8 @@ import { Typography } from '@mui/material';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 // Constants
-import { SMALL_PADDING, SMALL_MARGIN, TINY_MARGIN, NEW_RESV_MIDWIDTH } from '../Constants/style';
 import { PersonData } from './PersonInfo/Interface/PersonData';
 import { initPersonData } from '../Constants/initData';
-
-const FormStyle = {
-  width: '100%',
-  minWidth: NEW_RESV_MIDWIDTH,
-  p : SMALL_PADDING,
-  mt : TINY_MARGIN,
-  ml : TINY_MARGIN,
-  mr : TINY_MARGIN,
-  border: 3,
-  borderColor: 'grey.100',
-  borderRadius: 2
-}
-
-const margin = {
-  m : SMALL_MARGIN
-}
 
 const today = new Date()
 const tomorrow = new Date(today)
@@ -46,8 +29,8 @@ const Form = () => {
   const matches = useMediaQuery('(min-width:450px)');
 
   return (
-    <Box sx={FormStyle}>
-      <Typography variant="h4" gutterBottom component="div" sx={margin}>
+    <>
+      <Typography variant="h4">
         Form
       </Typography>
 
@@ -58,7 +41,7 @@ const Form = () => {
 
       <SubmitButton />
 
-    </Box>
+    </>
   );
 }
 

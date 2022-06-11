@@ -12,16 +12,14 @@ const Description = () => {
   return (
     <Stack sx={{ 
       minWidth: NEW_RESV_MIDWIDTH, 
-      width: '100%' ,
       p : SMALL_PADDING,
       m : MARGIN,
-
     }}>
       <Typography component="div" align="justify">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore accusamus ea deleniti excepturi ratione commodi neque illo laborum esse recusandae sed dolore natus cupiditate distinctio, voluptatum magni? Sequi, temporibus! Ullam.
       </Typography>
         {/* TODO: */}
-      <Button sx={{float: 'right', mr: MARGIN }} size="small">More ...</Button>
+      <Button sx={{mr: MARGIN }} size="small">More ...</Button>
       {/* Add image */}
     </Stack>
   );

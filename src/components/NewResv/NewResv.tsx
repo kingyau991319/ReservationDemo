@@ -5,6 +5,19 @@ import Form from './Form/Form';
 
 // Material Ui
 import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
+
+// Constants
+import { SMALL_PADDING, SMALL_MARGIN, TINY_MARGIN, NEW_RESV_MIDWIDTH } from './Constants/style';
+
+const FormStyle = {
+  minWidth: NEW_RESV_MIDWIDTH,
+  p : SMALL_PADDING,
+  m : TINY_MARGIN,
+  border: 3,
+  borderColor: 'grey.100',
+  borderRadius: 2
+}
 
 const NewResv = () => {
   return (
@@ -15,13 +28,11 @@ const NewResv = () => {
       justifyContent="center"
     >
       <Grid container>
-        <Description/>
-      </Grid>
-      <Grid container>
-        <ExtraInfo/>
-      </Grid>
-      <Grid container>
-        <Form/>
+        <Box sx={FormStyle}>
+          <Description/>
+          <ExtraInfo/>
+          <Form/>
+        </Box>
       </Grid>
     </Grid>
   )

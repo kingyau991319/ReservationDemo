@@ -14,7 +14,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import DiscountIcon from '@mui/icons-material/Discount';
 
 // Constants
-import { MARGIN, SMALL_PADDING, TINY_MARGIN,  NEW_RESV_MIDWIDTH } from '../constants/style';
+import { SMALL_PADDING, TINY_MARGIN,  NEW_RESV_MIDWIDTH } from '../constants/style';
 
 const ExtraInfo = () => {
   const [open, setOpen] = useState(true);
