@@ -16,6 +16,9 @@ import Person from './Person';
 import { PersonData } from './Interface/PersonData';
 import { InputType } from './Interface/InputElementType';
 
+// Icon
+import AddIcon from '@mui/icons-material/Add';
+
 // Constants
 import { initPersonData, RESV_PERSON_LIMIT } from '../../Constants/initData';
 import { SMALL_MARGIN } from '../../Constants/style';
@@ -96,7 +99,11 @@ const PersonInfo = (props : {persons : PersonData[], setPersons : Function}) => 
       {
         personLength <= RESV_PERSON_LIMIT &&
           <Stack direction={{sm: 'row-reverse'}} sx={{mr:  SMALL_MARGIN}} spacing={3}>
-            <Button variant="outlined" onClick={addPerson}>{t('add_new')}</Button>
+            <Button variant="outlined" onClick={addPerson} startIcon={<AddIcon/>}>
+              <Typography sx={{lineHeight: 'inherit'}}>
+                {t('add_new')}
+              </Typography>
+            </Button>
           </Stack>
       }
     </>

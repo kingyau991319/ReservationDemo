@@ -14,9 +14,6 @@ const FormStyle = {
   minWidth: NEW_RESV_MIDWIDTH,
   p : SMALL_PADDING,
   m : TINY_MARGIN,
-  border: 3,
-  borderColor: 'grey.100',
-  borderRadius: 2
 }
 
 const NewResv = () => {

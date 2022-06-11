@@ -7,6 +7,11 @@ import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import Icon from '@mui/material/Icon';
+
+// Icon
+import PersonIcon from '@mui/icons-material/Person';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 // Constants
 import { MEDIUM_PADDING, SMALL_MARGIN } from '../../Constants/style';
@@ -75,8 +80,9 @@ const Person =
 
   return (
     <Box sx={{border: 1 , p: MEDIUM_PADDING, m: SMALL_MARGIN}}>
-      <Typography variant="subtitle1" display="block" gutterBottom sx={{mb: SMALL_MARGIN}}>
-        {t('person_information') + (idx + 1)}
+      <Typography variant="h5" display="block" gutterBottom sx={{mb: SMALL_MARGIN}}>
+        <PersonIcon sx={{ fontSize: 25 }} />
+        {'\t' + t('person_information') + (idx + 1)}
       </Typography>
 
       <Grid container spacing={{xs: 2}} columns={{ xs: 4, sm: 8}}>
@@ -108,8 +114,9 @@ const Person =
       >
         <Button 
           variant="outlined"
+          startIcon={<DeleteIcon />}
           color="secondary"
-          sx={{visibility: length !== 1 ? 'visible' : 'hidden'}}
+          sx={{visibility: length !== 1 ? 'visible' : 'hidden', lineHeight: 'inherit'}}
           onClick={() => deletePerson(idx)}
         >
           {t('delete')}

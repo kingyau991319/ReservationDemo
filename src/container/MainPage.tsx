@@ -9,8 +9,6 @@ import SearchResv from "../components/SearchResv";
 // Material Ui
 import Grid from '@mui/material/Grid';
 
-import '../css/mainPage.less'
-
 const MainPage = () => {
 
   return (
