@@ -29,6 +29,7 @@ const Gender = (props : {value:GenderType, setGender:Function}) => {
       <InputLabel id="form-input-gender"> {t("gender")} </InputLabel>
       <Select
         onChange={changeGender}
+        sx={{ width: '240px'}}
         label={t("gender")}
         defaultValue={'other'}
       >

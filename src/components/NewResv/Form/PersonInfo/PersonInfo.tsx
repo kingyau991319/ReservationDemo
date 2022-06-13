@@ -49,31 +49,31 @@ const PersonInfo = (props : {persons : PersonData[], setPersons : Function}) => 
   }
 
   const changeValue = (id: number, type: InputType, value: any) => {
-    let updatePerson = persons.find((p) => p.id === id);
-    if (updatePerson !== undefined) {
-        switch (type) {
-          case 'name':
-            updatePerson.name = value;
-            break;
-          case 'age':
-            updatePerson.age = value;
-            break;
-          case 'email':
-            updatePerson.email = value;
-            break;
-          case 'phone':
-            updatePerson.phone = value;
-            break;
-          case 'gender':
-            updatePerson.gender = value;
-            break;
-          case 'remark':
-            updatePerson.remark = value;
-            break;
-          default:
-            return;
-        }
-      persons[id-1] = updatePerson;
+    let idx = persons.findIndex((p) => p.id === id);
+    if (persons !== undefined) {
+      switch (type) {
+        case 'name':
+          persons[idx].name = value;
+          break;
+        case 'age':
+          persons[idx].age = value;
+          break;
+        case 'email':
+          persons[idx].email = value;
+          break;
+        case 'phone':
+          persons[idx].phone = value;
+          break;
+        case 'gender':
+          persons[idx].gender = value;
+          break;
+        case 'remark':
+          persons[idx].remark = value;
+          break;
+        default:
+          console.error(`type ${type} is not found`);
+          throw new TypeError('Persons update type is not valid');
+      }
       setPersons([...persons]);
     }
   }

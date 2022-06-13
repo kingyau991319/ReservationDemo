@@ -8,7 +8,7 @@ import { BrowserRouter } from "react-router-dom";
 import './i18n';
 
 // Redux setting
-import store from './redux/store';
+import store from './Redux/store';
 import { Provider } from 'react-redux';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(

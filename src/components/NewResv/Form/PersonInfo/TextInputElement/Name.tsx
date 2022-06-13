@@ -14,7 +14,17 @@ const Name = (props : {value:string, setName:Function})  => {
     setName(event.target.value);
   }
 
-  return <TextField id="name-basic" label={t("name")} variant="filled" onChange={changeName} defaultValue={''} inputProps={{ maxLength: 300 }} />
+  return (
+    <TextField 
+      id="name-basic"
+      label={t("name")}
+      variant="filled"
+      onChange={changeName}
+      defaultValue={''}
+      inputProps={{ maxLength: 300 }}
+      sx={{ width: '240px'}}
+    />
+  )
 }
 
 export default Name;

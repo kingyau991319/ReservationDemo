@@ -21,5 +21,6 @@
   "person_information" : "Person information",
   "remark" : "Remark",
   "search" : "Search",
-  "submit" : "Submit"
+  "submit" : "Submit",
+  "submit_item" : "Submit Item"
 }

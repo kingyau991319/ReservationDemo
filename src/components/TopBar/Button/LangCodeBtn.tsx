@@ -3,7 +3,7 @@ import { useState, MouseEvent } from 'react';
 import { Link, useLocation } from "react-router-dom";
 
 // Common function
-import { setLangPath } from '../../../lib/routes';
+import { setLangPath } from '../../../Lib/routes';
 
 // I18n
 import { useTranslation } from 'react-i18next';

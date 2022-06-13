@@ -87,6 +87,7 @@ const Phone = (props : {value:PhoneData, setPhone:Function}) => {
         label={t("phone_number")}
         id="name-basic"
         variant="filled"
+        sx={{ width: '150px'}}
         // error={!isValidAge(value)}
         // helperText={!isValidAge(value) ? "Age is too large or too small" : null}
         onChange={changePhoneNumber}

@@ -33,6 +33,7 @@ const Age = (props: {value:number|null, setAge: Function}) => {
       type="number"
       variant="filled"
       error={!isValidAge(value)}
+      sx={{ width: '240px'}}
       helperText={!isValidAge(value) ? "Age is too large or too small" : null}
       onChange={changeAge}
       defaultValue={''}

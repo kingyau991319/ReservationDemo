@@ -8,7 +8,7 @@
   "email" : "電子郵件",
   "female" : "女性",
   "full_day": "全天",
-  "invalid_email": "無效的電子郵件",
+  "invalid_email": "無效的電子郵件地址",
   "gender": "性別",
   "male": "男性",
   "morning": "白天",
@@ -18,8 +18,9 @@
   "other" : "其他",
   "phone_number" : "電話號碼",
   "period" : "時段",
-  "person_information" : "個人資料",
+  "person_information" : "個人信息",
   "remark" : "備註",
   "search" : "搜索",
-  "submit" : "送出"
+  "submit" : "提交",
+  "Submit Item" : "提交項目"
 }

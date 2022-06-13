@@ -26,6 +26,7 @@ const Email = (props : {value:string, setEmail:Function}) => {
       helperText={!isValidEmail(value ?? '') ? t("invalid_email") : null}
       onChange={changeEmail}
       defaultValue={''}
+      sx={{ width: '240px'}}
       inputProps={{ maxLength: 300 }} 
     />
   )}

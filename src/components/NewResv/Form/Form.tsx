@@ -15,6 +15,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 // Constants
 import { PersonData } from './PersonInfo/Interface/PersonData';
 import { initPersonData } from '../Constants/initData';
+import { TINY_MARGIN } from '../Constants/style';
 
 const today = new Date()
 const tomorrow = new Date(today)
@@ -30,16 +31,15 @@ const Form = () => {
 
   return (
     <>
-      <Typography variant="h4">
+      <Typography variant="h4" sx={{mt: TINY_MARGIN}}>
         Form
       </Typography>
 
       <DatePickers matches={matches} date={date} setDate={setDate} />
       <SelectPeriod matches={matches} period={period} setPeriod={setPeriod} />
-
       <PersonInfo persons={persons} setPersons={setPersons} />
 
-      <SubmitButton />
+      <SubmitButton persons={persons}/>
 
     </>
   );

@@ -34,8 +34,6 @@ const TopBar = () => {
 
   return (
     <div className='topbar'>
-      <h1 className="topbar-title">Title</h1>
-
       <div className="topbar-float-left">
         <LangcodeBtn/>
 
