@@ -7,7 +7,6 @@ import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import Icon from '@mui/material/Icon';
 
 // Icon
 import PersonIcon from '@mui/icons-material/Person';
@@ -105,7 +104,6 @@ const Person =
         <Grid item xs={6} sm={4} md={4}>
           <Remark value={remark} setRemark={setRemark} />
         </Grid>
-
       </Grid>
 
       <Stack

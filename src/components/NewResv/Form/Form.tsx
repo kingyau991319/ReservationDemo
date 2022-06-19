@@ -40,7 +40,6 @@ const Form = () => {
       <PersonInfo persons={persons} setPersons={setPersons} />
 
       <SubmitButton persons={persons}/>
-
     </>
   );
 }
